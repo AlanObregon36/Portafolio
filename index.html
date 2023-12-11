@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Como Enviar un correo electrónico desde Localhost con PHP | Sistemas Web</title>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+</head>
+<body>
+    <script>
+        window.onload = function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('message') && urlParams.get('message') === '1') {
+        alert("Correo enviado correctamente");
+    }
+    if (urlParams.has('message') && urlParams.get('message') === '2') {
+        alert("Problemas al enviar el correo, favor de contactar al administrador de la página");
+    }
+}
+    </script>
+<!--coact start here-->
+<h1>Formulario de contacto</h1>
+<div class="contact">
+	<div class="contact-main">
+	<form method="post" action="pruebaphpcorreo.php">
+        <h3>Nombre Completo:</h3>
+		<input type="text" placeholder="Nombre" class="hola"  name="customer_name" required />
+		<h3>Correo Electrónico</h3>
+		<input type="email" placeholder="Correo" class="hola"  name="customer_email" required />
+		<h3>Asunto</h3>
+		<input type="text" placeholder="Asunto" class="hola"  name="subject" required />
+		<h3>Mensaje</h3>
+		<textarea  name="message" placeholder="Deja tu mensaje aquí ...." required /></textarea>
+	</div>
+	<div class="enviar">
+		<div class="contact-check">
+		</div>
+        <div class="contact-enviar">
+		  <input type="submit" value="Enviar mensaje" name="send">
+		</div>
+		<div class="clear"> </div>
+		</form>
+</div>
+</div>
+<!--contact end here-->
+</body>
+</html>
